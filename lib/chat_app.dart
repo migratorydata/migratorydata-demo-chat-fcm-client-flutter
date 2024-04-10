@@ -10,7 +10,7 @@ import 'package:migratorydata_client_dart_v6/client.dart';
 class ChatApp implements MigratoryDataListener, MigratoryDataLogListener {
   // TODO: to be configured
   String PUBLISH_PASSWORD = "some-token";
-  String SERVER_ADDRESS = "192.168.1.223:8800";
+  String SERVER_ADDRESS = "demo.migratorydata.com";
   bool USE_ENCRYPTION = false;
 
   AppStatus appStatus = AppStatus.LOG_IN;

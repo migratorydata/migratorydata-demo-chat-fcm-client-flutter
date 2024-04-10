@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
@@ -114,16 +113,11 @@ class _MyApp extends State<MyApp> with WidgetsBindingObserver {
           ),
           body: SingleChildScrollView(
               child: Column(
-                mainAxisSize: MainAxisSize.max,
                 children: [
                   Row(
-                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      Expanded(
-                        child:
-                        Padding(
-                          padding: EdgeInsets.all(14),
-                          child: TextFormField(
+                      Expanded(child:
+                          TextFormField(
                             initialValue: "demoRoom",
                             decoration: const InputDecoration(
                               border: UnderlineInputBorder(),
@@ -132,10 +126,8 @@ class _MyApp extends State<MyApp> with WidgetsBindingObserver {
                             autofocus: false,
                             obscureText: false,
                           ),
-                        ),
                       ),
-                      Padding(padding: EdgeInsets.all(14),
-                          child: ElevatedButton(
+                          ElevatedButton(
                             onPressed: () {
                               if (_chatApp?.getAppStatus() ==
                                   AppStatus.LOG_IN) {
@@ -149,15 +141,12 @@ class _MyApp extends State<MyApp> with WidgetsBindingObserver {
                                     ? "Logout"
                                     : "Login"),
                           )
-                      )
                     ],
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.all(14),
                             child: TextFormField(
                               initialValue: _username,
                               autofocus: false,
@@ -167,31 +156,16 @@ class _MyApp extends State<MyApp> with WidgetsBindingObserver {
                                 labelText: 'Enter your username',
                               ),
                             ),
-                          )
                       ),
-                      Padding(padding: EdgeInsets.all(14),
-                          child: ElevatedButton(
+                          ElevatedButton(
                             onPressed: () {},
                             child: const Text("Close"),
                           )
-                      )
                     ],
                   ),
-                  Align(
-                    alignment: AlignmentDirectional(-1, 0),
-                    child: Padding(
-                      padding: EdgeInsets.all(14),
-                      child: Text(
-                        'Client Info:',
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(-1, 0),
-                    child: Container(
-                      margin: const EdgeInsets.all(14.0),
-                      padding: const EdgeInsets.all(4.0),
-                      height: 60.0,
+                  Container(
+                    margin: const EdgeInsets.all(5.0),
+                    height: 50.0,
                       child: ListView(
                         children: [
                           for (final info in _apiInfo.reversed.toList())
@@ -208,22 +182,9 @@ class _MyApp extends State<MyApp> with WidgetsBindingObserver {
                         reverse: true,
                       ),
                     ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(-1, 0),
-                    child: Padding(
-                      padding: EdgeInsets.all(14),
-                      child: Text(
-                        'Messages:',
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(-1, 0),
-                    child: Container(
-                      margin: const EdgeInsets.all(14.0),
-                      padding: const EdgeInsets.all(4.0),
-                      height: 160.0,
+                  Container(
+                    margin: const EdgeInsets.all(5.0),
+                    height: 100.0,
                       child: ListView(
                         children: [
                           for (final info in _messages.reversed.toList())
@@ -239,18 +200,10 @@ class _MyApp extends State<MyApp> with WidgetsBindingObserver {
                         ],
                         reverse: true,
                       ),
-                    ),
                   ),
-                  //Expanded(
-                  Align(
-                    alignment: AlignmentDirectional(0, 1),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                    Row(
                       children: [
                         Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.all(14),
                             child: TextField(
                               controller: _writeMessagefieldText,
                               onChanged: (text) {
@@ -258,7 +211,6 @@ class _MyApp extends State<MyApp> with WidgetsBindingObserver {
                               },
                               textInputAction: TextInputAction.go,
                               onSubmitted: (value) {
-                                print("Go button is clicked-$value");
                                 if (_writeMessagefieldText.text
                                     .trim()
                                     .isNotEmpty) {
@@ -272,11 +224,8 @@ class _MyApp extends State<MyApp> with WidgetsBindingObserver {
                                 labelText: 'Write message...',
                               ),
                             ),
-                          ),
                         ),
-                        Padding(
-                            padding: EdgeInsets.all(14),
-                            child: ElevatedButton(
+                            ElevatedButton(
                               onPressed: () {
                                 if (_writeMessagefieldText.text
                                     .trim()
@@ -287,11 +236,8 @@ class _MyApp extends State<MyApp> with WidgetsBindingObserver {
                               },
                               child: const Text("Send"),
                             )
-                        ),
                       ],
                     ),
-                  ),
-                  //),
                 ],
               )
           )
