@@ -236,10 +236,10 @@ packages:
     dependency: "direct main"
     description:
       name: migratorydata_client_dart_v6
-      sha256: "0c03eed1d9a3db991b3f20dd31890ea3d01b9850aadae97e5614a877f877da51"
+      sha256: "22f43d3cfac148630a488cddd2aebedef05f4d48d2be490a40fecc624975ece6"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "1.0.6"
   path:
     dependency: transitive
     description:

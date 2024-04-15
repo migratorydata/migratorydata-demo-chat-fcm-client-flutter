@@ -33,7 +33,7 @@ class ChatApp implements MigratoryDataListener, MigratoryDataLogListener {
     migratoryDataClient.setLogListener(this, MigratoryDataLogLevel.DEBUG);
 
     migratoryDataClient.setEntitlementToken(PUBLISH_PASSWORD);
-    migratoryDataClient.setExternalToken(fcmToken, null);
+    migratoryDataClient.setExternalToken(fcmToken);
     migratoryDataClient.setListener(this);
 
     migratoryDataClient.setEncryption(USE_ENCRYPTION);
